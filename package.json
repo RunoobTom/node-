@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "aysnc": "0.0.1-security",
+    "cheerio": "^1.0.0-rc.3",
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.5",
+    "eventproxy": "^1.0.0",
+    "mysql": "^2.18.1",
+    "superagent": "^5.2.2"
+  }
+}
