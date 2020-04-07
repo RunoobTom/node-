@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script>
+            function handleClick() {
+                const domBtn = document.getElementById('click');
+                console.log(domBtn.style)
+                domBtn.style.color = 'black';
+            }
+        </script>
+        <style>
+            .click-animation {
+                /* animation: click-animation 1s; */
+                position: relative;
+                color: #5e96e9;
+                background: #ffffff;
+                border-radius: 4px;
+                outline: none;
+            }
+
+            .click-animation-clicked::after {
+                content: '';
+                position: absolute;
+                top: -10px;
+                bottom: -10px;
+                left: -1px;
+                right: -1px;
+                background: blue;
+                z-index: -1;
+                opacity: 0.3;
+                /* visibility: hidden; */
+            }
+
+            .click-animation:hover {
+                /* animation: click-animation 1s linear 1 alternate; */
+                
+            }
+
+            @keyframes click-animation {
+                0% {
+                    width: 100px;
+                }
+
+                50% {
+                    width: 200px;
+                }
+
+                100% {
+                    width: 100px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <button id="click" class="click-animation" onclick="handleClick()">点击扩散效果</button>
+    </body>
+</html>
