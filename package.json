@@ -5,9 +5,15 @@
     "cookie-parser": "^1.4.5",
     "eventproxy": "^1.0.0",
     "mysql": "^2.18.1",
+    "request": "^2.88.2",
     "superagent": "^5.2.2"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "request": "^2.88.2"
+=======
+    "express": "^4.17.1",
+    "http": "^0.0.1-security"
+>>>>>>> 14a50afd3d4e0f67bb06fed306449b8db72ae9a2
   }
 }
