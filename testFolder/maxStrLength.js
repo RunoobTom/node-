@@ -1,11 +1,9 @@
  function maxStr(str) {
-    var tempLenth = 0;
     var tempStr = '';
     var maxStr = '';
     str.split('').forEach((item, index) => {
         if(tempStr.indexOf(item) > -1) {
-            tempLenth = tempLenth > tempStr.length ? tempLenth : tempStr.length;
-            maxStr = tempLenth > tempStr.length ? maxStr : tempStr;
+            maxStr = maxStr.length > tempStr.length ? maxStr : tempStr;
 
             tempStr = item;
         } else {
@@ -13,7 +11,7 @@
         }
     });
 
-    console.log(tempLenth, maxStr);
+    console.log(maxStr.length, maxStr);
 };
 
 maxStr('qwertyyuiasdfghhjkzxcvbnm,')
