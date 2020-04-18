@@ -1,25 +1,34 @@
 // 防抖函数
 
-function myDebounce(func, wait) {
+function myDebounce(func, wait = 500) {
     let timeout = null;
     let context = this;
 
-    return function() {
-        // console.log(this, arguments);
+    if(arguments.length > 2) {
         if(timeout) clearTimeout(timeout);
-
         setTimeout(() => {
-            func.apply(context, arguments);
+            func.apply(context, Array.prototype.slice.call(arguments, 2));
         }, wait);
+    } else {
+        return function() {
+            // console.log(this, arguments);
+            if(timeout) clearTimeout(timeout);
+    
+            setTimeout(() => {
+                func.apply(context, arguments);
+            }, wait);
+        }
     }
+    
     // const stvl = setInterval(() => func, wait)
 }
 
 function func(a, b) {
-    console.log(a, b);
+    console.log('debounce', a, b);
 }
 
-myDebounce(func, 1000)(1,2)
+myDebounce(func, 1000)(1,2);
+myDebounce(func, 1000, 3, 4);
 
 // 节流函数
 function myThrottle(func, wait) {

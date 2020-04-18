@@ -20,4 +20,22 @@ var ob = {
 }
 
 var result = add.myCall(ob, 12, 23);
-console.log(result)
+console.log(result);
+
+
+Function.prototype.myApply = function(targetObj, argu) {
+    targetObj.fn = this;
+
+    targetObj.fn(argu)
+};
+
+var newObj = {
+    hello: 'hello ',
+    name: 'Tom'
+};
+
+function hello() {
+    console.log(this.hello + this.name);
+};
+
+hello.myApply(newObj, 123)
