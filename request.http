@@ -1,0 +1,4 @@
+@baseUrl = http://hq.sinajs.cn
+
+GET {{baseUrl}}/list=sh600519
+Accept: application/json

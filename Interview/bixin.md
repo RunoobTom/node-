@@ -4,7 +4,8 @@
 2.http和https有什么区别
     https需要申请证书，http明文https加密传输，https传输时间更久
 3.使用到请求缓存的情况 （cache-control和etag） cache-control的几个字段
-
+    1.根据请求头的cache-control和expires判断是否命中强缓存(200(from cache));分为memory和disk  分别是内存和磁盘
+    2.未命中强缓存则发个请求到服务器，根据etag和last-modified判断是否命中协商缓存，命中的话还是从缓存取资源(服务端返回304)
 js基础
 1.基础数据和引用数据类型区别
 2.var let const的区别  const a ={b:123} a.b能改变吗
