@@ -6,6 +6,7 @@
 3.使用到请求缓存的情况 （cache-control和etag） cache-control的几个字段
     1.根据请求头的cache-control和expires判断是否命中强缓存(200(from cache));分为memory和disk  分别是内存和磁盘
     2.未命中强缓存则发个请求到服务器，根据etag和last-modified判断是否命中协商缓存，命中的话还是从缓存取资源(服务端返回304)
+
 js基础
 1.基础数据和引用数据类型区别
 2.var let const的区别  const a ={b:123} a.b能改变吗
@@ -25,6 +26,9 @@ js基础
     链式传递
 9.Array.prototype.sort用的算法
     数组长度不超过10个使用插入排序；超过10个使用的快排
+10.匿名函数和函数声明的区别
+11.js的类，构造函数和类有什么区别
+12.怎么给一个对象增加新的属性
 
 react
 1.什么是受控组件
@@ -32,5 +36,7 @@ react
     shouldComponentUpdate避免不必要的更新render；render中能避免放入的计算和赋值尽量避免；
 3.react最新的几个特性（答hooks）
 4.react生命周期
+5.react父子通信的方法
+6.react父组件更新传给子组件的props怎么更新子组件
 
 webpack打包
