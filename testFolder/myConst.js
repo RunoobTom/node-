@@ -6,13 +6,18 @@ function myConst(name, value) {
     Object.defineProperty(global, name, {
         // enumerable: false,
         // configurable: true,
-        writable: true,
-        // get: () => value,
-        
+        // writable: true,
+        get: result => result,
+        set: target => target
     })
 };
 
 myConst('nums', 12);
+
+console.log(nums);
+
+nums = 123;
+console.log(nums);
 
 // 模拟new，首先把原型指向构造函数的原型对象，然后把构造函数的this指向新创建的对象执行一次，最后把对象返回出来
 function myNew(Fuc, args) {

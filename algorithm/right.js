@@ -1,3 +1,5 @@
+// 空间复杂度为1
+
 function right(num, arr) {
     for(let i = 0; i < num % arr.length; i++) {
         const temp = arr.pop();
