@@ -6,9 +6,10 @@ function myConst(name, value) {
     Object.defineProperty(global, name, {
         // enumerable: false,
         // configurable: true,
-        // writable: true,
-        get: result => result,
-        set: target => target
+        writable: true,
+        value,
+        // get: () => value,  // get和set不能和value、writable同时存在
+        // set: target => target
     })
 };
 
