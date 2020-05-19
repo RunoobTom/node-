@@ -56,7 +56,7 @@ function godBubble(target) {
         console.log('i ', i)
         if(tag) break; 
     }
-    console.log(arr);
+    console.log('冒泡', arr);
     return arr;
 
 };
@@ -80,5 +80,27 @@ function quickSort(arr) {
 
     return quickSort(left).concat(temp, quickSort(right));
 }
+console.log('快排' ,quickSort([10,3,11,3,4,2,8,20]));
 
-console.log(quickSort([10,3,11,3,4,2,8,20]));
+// 优化在于不创建新的数组 在原数组上进行改变
+function promoteQuickSort(arr, left, right) {          //这个left和right代表分区后“新数组”的区间下标，因为这里没有新开数组，所以需要left/right来确认新数组的位置
+    if (left < right) {
+        let pos = left - 1                      //pos即“被置换的位置”，第一趟为-1
+        for(let i = left; i <= right; i++) {    //循环遍历数组，置换元素
+            let pivot = arr[right]              //选取数组最后一位作为基准数，
+            if(arr[i] <= pivot) {               //若小于等于基准数，pos++，并置换元素, 这里使用小于等于而不是小于, 其实是为了避免因为重复数据而进入死循环
+                pos++
+                let temp = arr[pos]
+                arr[pos] = arr[i]
+                arr[i] = temp
+            }
+        }
+        //一趟排序完成后，pos位置即基准数的位置，以pos的位置分割数组
+        quickSort(arr, left, pos - 1)        
+        quickSort(arr, pos + 1, right)
+    }
+    return arr      //数组只包含1或0个元素时(即left>=right)，递归终止
+}
+
+
+console.log('优化快排', promoteQuickSort([1,2,3,4,2,3,20,4,5,-2,-4,5,-100], 0, 11));
