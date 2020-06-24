@@ -1,4 +1,5 @@
 // 防抖函数
+// 注意闭包的使用，保证闭包使用的同一个变量
 
 function myDebounce(func, wait = 500) {
     let timeout = null;
