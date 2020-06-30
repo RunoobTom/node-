@@ -34,8 +34,21 @@ var newObj = {
     name: 'Tom'
 };
 
-function hello() {
-    console.log(this.hello + this.name);
+function hello(value) {
+    console.log(this.hello + this.name, value);
 };
 
 hello.myApply(newObj, 123)
+
+function newCallWay(func, targetObj, ...args) {
+    targetObj.fn = func;
+
+    targetObj.fn(...args);
+}
+
+var c = {a: 123};
+function cFuc() {
+    console.log(this.a);
+};
+
+newCallWay(cFuc, c, 1, 3);

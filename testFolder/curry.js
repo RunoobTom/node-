@@ -6,7 +6,7 @@ function myCurry(fn, ...arg) {
     console.log('args', args);
 
     return function(...newAgrs) {
-        console.log('arguments', arguments)
+        console.log('arguments', arguments);
         const _args = [...args, ...newAgrs];
 
         if(_args.length < length) {
@@ -56,3 +56,29 @@ function multiFn(a, b, c) {
 // var an = curry(multiFn, 2);
 // an(2);
 // an(2);
+
+
+function testClosure() {
+    var a = 1;
+
+    return () => {
+        a ++;
+        return a;
+    }
+}
+
+
+for(var i = 0; i<5; i ++) {
+    (
+        function() {
+            var b = i;
+            setTimeout(function() {
+                console.log(b)
+            })
+        }
+    )()
+}
+
+console.log('i', i);
+// 解决方法  let和闭包
+// let是块级作用域

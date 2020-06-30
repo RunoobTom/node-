@@ -12,4 +12,6 @@ animation和keyframe
 手写柯力化
 手写节流
 setState是不是异步 怎么同步
+    异步，bacth批处理
+    setTimout/setInterval可以同步，原生事件触发可以同步
 函数和组件有什么区别
