@@ -2,11 +2,12 @@
     <head>
         <script>
             function sendJsonp () {
+                // 因为带有src属性的都可以算作自己的资源，所有不算跨域
                 // 创建一个script标签，通过标签的get请求绕过浏览器的跨域限制
                 // 请求发出去了，怎么样拿到后端给的数据和怎么执行回调函数来处理数据呢？需要后端的帮助
                 console.log('chufa')
                 var frame = document.createElement('script');
-			    frame.src = 'http://localhost:3000?name=xia&age=17&functionName=getJsonp';
+			    frame.src = 'http://localhost:3000?name=xiaotang&age=17&functionName=getJsonp';
                 var body = document.getElementsByTagName('body');
                 body[0].append(frame);
             }
@@ -20,7 +21,7 @@
             function sendXHR() {
                 console.log('run')
                 const xhr = new XMLHttpRequest();
-                xhr.open('GET', 'http://localhost:3000');
+                xhr.open('GET', 'http://172.19.3.59:3000?name=xiaotanga');
                 console.log(xhr)
                 xhr.onreadystatechange = function() {
                     console.log(xhr.readyState, xhr.status);
