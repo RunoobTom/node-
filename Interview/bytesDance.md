@@ -5,7 +5,8 @@
 3.框架原理，官方文档 ->  基础用法  ->  原理文档
 
 题目
-vw，px,pt,rem,em什么区别
+vw，px,pt,rem,em什么区别  
+    em相对于父元素的fontSize，rem相对于根元素html的fontSize，pt是绝对长度对应物理意义的一个像素点
 绝对垂直居中
 animation和keyframe
 微信小程序用过什么语言
