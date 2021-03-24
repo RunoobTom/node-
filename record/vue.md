@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-29 15:49:19
- * @LastEditTime: 2020-10-16 15:52:05
+ * @LastEditTime: 2021-01-07 15:26:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node-tips/record/vue.md
@@ -35,3 +35,8 @@ initData函数：
 
 
 为什么组件内用this.message能获取到this.props里的message
+
+
+# 模板编译
+基本流程如图
+![avatar](./模板流程图.png)

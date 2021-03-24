@@ -104,3 +104,42 @@ function promoteQuickSort(arr, left, right) {          //这个left和right代�
 
 
 console.log('优化快排', promoteQuickSort([1,2,3,4,2,3,20,4,5,-2,-4,5,-100], 0, 11));
+
+// es6 快排
+function qSort(arr) {
+    if(arr.length <= 1) {
+        return arr
+    }
+
+    const left = [], right = [];
+
+    const base = arr[arr.length - 1]
+
+    for(let i = 0; i < arr.length - 1;i ++) {
+        if(arr[i] < base) left.push(arr[i])
+        else right.push(arr[i])
+    }
+
+    return [...qSort(left), base, ...qSort(right)]
+}
+
+console.log('ss', qSort([1,2,3,4,2,3,20,4,5,-2,-4,5,-100]))
+
+// 插入排序
+function injectionSort(arr) {
+    for(let i = 1;i<arr.length;i++) {
+        const temp = arr[i]
+        let preIndex = i - 1
+
+        while(temp < arr[preIndex] && preIndex >= 0 ) {
+            arr[preIndex + 1] = arr[preIndex]
+            preIndex --
+        }
+        
+        arr[preIndex + 1] = temp
+    }
+
+    return arr
+}
+
+console.log('inject', injectionSort([1,2,3,4,2,3,20,4,5,-2,-4,5,-100]))
