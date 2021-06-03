@@ -1,0 +1,26 @@
+<!--
+ * @Author: zhaoqian.tang
+ * @Date: 2021-05-24 20:16:01
+ * @LastEditTime: 2021-05-24 20:31:46
+ * @LastEditors: your name
+ * @Description: 
+-->
+
+<html>
+    <script>
+        function consoleEvent(e, domName) {
+            console.log(domName, e)
+
+            if(e.currentTarget) {
+                console.log('currentTarget', e.currentTarget)
+            }
+        }
+    </script>
+    <body>
+        <div onclick="consoleEvent(event, 'father')">
+            father
+            <div onclick="consoleEvent(event, 'son1')">son1</div>
+            <div onclick="consoleEvent(event, 'son2')">son2</div>
+        </div>
+    </body>
+</html>

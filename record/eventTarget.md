@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-23 19:06:51
- * @LastEditTime: 2020-12-23 19:09:11
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-24 20:28:04
+ * @LastEditors: your name
  * @Description: In User Settings Edit
  * @FilePath: /node-tips/record/eventTarget.md
 -->
@@ -17,3 +17,5 @@
 </ul>
 
 点击li，target指向li，触发父元素ul的事件监听，currenTarget指向ul
+
+tips: currentTarget在chrome控制台显示null，但是单独打印可以展示当前冒泡到的dom
