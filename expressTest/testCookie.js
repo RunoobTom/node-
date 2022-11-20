@@ -5,7 +5,7 @@ const app = express();
 app.use(cookieParser());
 // console.log(cookieParse)
 
-app.get('/', (req, res) => {
+app.get('/mgt/activity/list', (req, res) => {
     const { cookie } = req;
     console.log('cookie', req.headers.cookie);
     // if(req.cookies.isVisit) {
@@ -15,8 +15,8 @@ app.get('/', (req, res) => {
     //     res.cookie('isVisit', 1, {maxAge: 60 * 1000, httpOnly: true}) // 该处是设置 cookie 与 httpOnly 
     //     res.send('欢迎初次光临')
     // }
-    res.cookie("name", 'zhangsan', {maxAge: 900000, httpOnly: true, sameSite: 'strict'}); 
-    res.send('123')
+    // res.cookie("name", 'zhangsan', {maxAge: 900000, httpOnly: true, sameSite: 'strict'}); 
+    res.send('tt')
 });
 
 app.listen(3000, () => {

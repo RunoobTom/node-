@@ -6,6 +6,9 @@
             maxStr = maxStr.length > tempStr.length ? maxStr : tempStr;
 
             tempStr = item;
+        } else if(index === str.length - 1) {
+            tempStr += item
+            maxStr = maxStr.length > tempStr.length ? maxStr : tempStr;
         } else {
             tempStr += item;
         }

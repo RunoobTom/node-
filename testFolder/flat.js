@@ -12,7 +12,7 @@ function myFlat(arr) {
 }
 
 function myFlat2(arr) {
-    const result  = [];
+    let result  = [];
 
     arr.forEach((item) => {
         if(item instanceof Array) {

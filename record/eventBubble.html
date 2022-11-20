@@ -1,0 +1,44 @@
+<!--
+ * @Author: zhaoqian.tang
+ * @Date: 2021-08-11 17:59:19
+ * @Desc: 
+-->
+<body>
+    <div id="parent">
+      父元素
+      <div id="child">
+        子元素
+      </div>
+    </div>
+    <script type="text/javascript">
+      var parent = document.getElementById("parent");
+      var child = document.getElementById("child");
+      document.body.addEventListener("click",function(e){
+        console.log("body冒泡");
+      },false);
+      document.body.addEventListener("click",function(e){
+        console.log("body捕获");
+      },true);
+  
+      parent.addEventListener("click",function(e){
+        console.log("父组件冒泡阶段");
+        // e.stopPropagation()
+
+      },false);
+      parent.addEventListener("click",function(e){
+        console.log("父组件捕获阶段");
+        e.stopPropagation()
+      },true);
+  
+      child.addEventListener("click",function(e){
+        console.log("child捕获");
+        // e.stopPropagation()
+        // e.stopImmediatePropagation()
+      },true);
+      child.addEventListener("click",function(e){
+        console.log("child冒泡");
+        // e.stopPropagation()
+      },false);
+    </script>
+</body>
+
